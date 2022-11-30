@@ -23,26 +23,26 @@ public class App {
             Principal somePrincipal = session.get(Principal.class, 1);
             System.out.println(somePrincipal.getSchool().getSchoolNumber());
 
-//            /**
-//             * Получите любую школу, а затем получите ее директора.
-//             */
-//            School someSchool = session.get(School.class, 2);
-//            System.out.println(someSchool.getPrincipal().getName());
-//
-//            /**
-//             * Создайте нового директора и новую школу и свяжите эти сущности.
-//             */
-//            Principal newPrincipal = new Principal("Ivan", 33);
-//            School newSchool = new School(32, newPrincipal);
-//
-//            session.persist(newPrincipal);
-//            session.persist(newSchool);
-//
-//            /**
-//             * Смените директора у существующей школы.
-//             */
-//            Principal updatePrincipal = session.get(Principal.class, 3);
-//            updatePrincipal.setName("Tobi");
+            /**
+             * Получите любую школу, а затем получите ее директора.
+             */
+            School someSchool = session.get(School.class, 2);
+            System.out.println(someSchool.getPrincipal().getName());
+
+            /**
+             * Создайте нового директора и новую школу и свяжите эти сущности.
+             */
+            Principal newPrincipal = new Principal("Ivan", 33);
+            School newSchool = new School(32, newPrincipal);
+
+            session.persist(newPrincipal);
+            session.persist(newSchool);
+
+            /**
+             * Смените директора у существующей школы.
+             */
+            Principal updatePrincipal = session.get(Principal.class, 3);
+            updatePrincipal.setName("Tobi");
 
 
             transaction.commit();
